@@ -1,0 +1,39 @@
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.app-container > div {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  box-shadow: 0 0 10px 0;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.app-title {
+  text-align: center;
+  box-shadow: 0 2px 3px 0;
+  border-radius: 10px 10px 0 0;
+  margin: 0 0 15px 0;
+  padding: 10px;
+}
+
+.todo-container {
+  margin-top: 20px;
+  display: flex;
+  row-gap: 5px;
+  flex-direction: column;
+}
+
+.btnStyle {
+  width: 100%;
+  background-color: #008080;
+  color: white;
+  border: none;
+  height: 30px;
+  font-size: 18px;
+  margin-top: 20px;
+}
