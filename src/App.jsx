@@ -1,26 +1,13 @@
 import React from "react";
 // components
-import Layout from "./components";
 // styles
 import "./App.css";
+import TaskList from "./components/task";
 //react router
-import { Routes, Route } from 'react-router';
 
-function App({routes = []}) {
+function App() {
   return (
-      <Routes>
-        {
-          routes.map(({path,Component, withLayout}) => (
-            <Route key={`main-route-[${path}]`} path={path} element={withLayout ? (
-              <Layout>
-                <Component />
-              </Layout>
-            ):(
-              <Component />
-            )}></Route>
-          ))
-        }
-      </Routes>
+      <TaskList />
   )
 }
 
