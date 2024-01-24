@@ -95,4 +95,4 @@ const TaskList = () => {
 };
 
 
-export default memo(TaskList);
+export default TaskList
