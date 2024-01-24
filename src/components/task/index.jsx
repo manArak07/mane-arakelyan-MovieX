@@ -27,12 +27,9 @@ const TaskList = () => {
   const [newTaskText, setNewTaskText] = useState("");
   const [editedTaskId, setEditedTaskId] = useState(null);
 
-
-
   const toggleTask = useCallback((taskId) => {
     setTasks(prevTasks => prevTasks.map(task => (task.id === taskId ? { ...task, completed: !task.completed } : task)));
-  }, []
-  )
+  }, [])
 
   const deleteTask = useCallback((taskId) => {
     setTasks(prevTasks => prevTasks.filter(task => task.id !== taskId))
@@ -55,10 +52,6 @@ const TaskList = () => {
     }
   } 
   
-  
-  
-  
-  
   const addTask = () => {
     if (newTaskText.trim() !== "") {
       setTasks(prevTasks => [...prevTasks, { id: prevTasks.length + 1, text: newTaskText, completed: false }]);
@@ -66,11 +59,7 @@ const TaskList = () => {
     }
   };
 
-
-
-
   const memoizedTaskList = useMemo(() => tasks.map(task => <Task key={task.id} task={task} onToggle={toggleTask} onDelete={deleteTask} onEdit={editTask} />), [tasks])
-
 
   return (
     <div className="flex flex-col space-y-5 w-[50vw] mx-auto mt-8 p-4 bg-gray-100 rounded shadow">
