@@ -1,14 +1,17 @@
 import React from "react";
-// components
-// styles
-import "./App.css";
-import TaskList from "./components/task";
-//react router
+import Layout from "./components/layout";
+import Advertisment from "./components/advertisment";
+import info from "./providers";
 
 function App() {
   return (
-      <TaskList />
-  )
+    <Layout>
+      {info.map((info, index) => (
+        <Advertisment key={index} heading={info.heading} details={info.details}/>
+      ))}
+    </Layout>
+
+  );
 }
 
 export default App;
