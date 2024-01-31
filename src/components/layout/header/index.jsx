@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import Cart from "../../cart"
 
 function Header() {
     return (
@@ -18,10 +19,8 @@ function Header() {
                             <div className="h-8 flex justify-center items-center w-24">My Account</div>
                         </Link>
                     </div>
-                    <div className="flex ml-4 ">
-                        <Link to="#">
-                            <button className="w-20 rounded-3xl h-8 flex justify-center items-center bg-[#0C72EA] text-white">Cart</button>
-                        </Link>
+                    <div className="flex w-20 ml-4 ">
+                       <Cart />
                     </div>
                 </div>
             </div>
