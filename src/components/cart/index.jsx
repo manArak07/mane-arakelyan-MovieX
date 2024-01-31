@@ -9,7 +9,7 @@ function Cart() {
             <button className="w-20 rounded-3xl h-8 flex  justify-center items-center bg-[#0C72EA] text-white">Cart</button>
             {cartFromStore.length ? (<div className="w-6 h-6 bg-[#d99687] flex justify-center items-center font-bold text-[#8d402f]  absolute -top-1 rounded-full -right-1">
                 {cartFromStore.length}
-            </div>) : (null)
+            </div>) : null
             }
             
         </Link>
