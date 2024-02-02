@@ -1,9 +1,10 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom/dist";
+import { getCart } from "../../providers/redux/slices";
 
 function Cart() {
 
-    const cartFromStore = useSelector(state => state.cart)
+    const cartFromStore = useSelector(getCart)
     return (
         <Link className="relative" to="#">
             <button className="w-20 rounded-3xl h-8 flex  justify-center items-center bg-[#0C72EA] text-white">Cart</button>

@@ -5,9 +5,11 @@ import { PiChatCircleDots } from "react-icons/pi";
 import { memo, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { getCart } from "../../../providers/redux/slices";
+import { addAd, removeAd } from "../../../providers/redux/slices";
 
 const AdCards = memo(({ details }) => {
-    const cart = useSelector(state => state.cart)
+    const cart = useSelector(getCart)
     const dispatch = useDispatch()
     const [favColor, setFavColor] = useState(details.map(() => 'black'))
 
@@ -19,14 +21,14 @@ const AdCards = memo(({ details }) => {
 
         if (newColor[index] === 'red') {
             const addToCart = (ad) => {
-                dispatch({type: "ADD_AD_TO_CART", payload: ad})
+                dispatch(addAd(ad))
             }
 
             addToCart(ad)
         } else if (newColor[index] === 'black') {
             const removeFromCart = (ad) => {
                 cart.some((adItem) => adItem.id === ad.id) && (
-                    dispatch({type: "REMOVE_AD_FROM_CART", payload: ad.id})
+                    dispatch(removeAd(ad))
                 )
             }
 
@@ -42,7 +44,7 @@ const AdCards = memo(({ details }) => {
                         <div className="w-[164px] relative h-[160px] bg-contain bg-no-repeat" style={{ backgroundImage: `url(${detail.cardImg})` }}>
 
                             <div>
-                                <FaHeart style={{ color: `${favColor[index]} `  }} onClick={() => toggleFav(detail, index)} className="absolute text-border w-6 h-6 text-3xl right-[6px] top-1 "/>
+                                <FaHeart style={{ color: `${favColor[index]}`}} onClick={() => toggleFav(detail, index)} className="absolute text-border w-6 h-6 text-3xl right-[6px] top-1 "/>
                             </div>
 
                             <div>
