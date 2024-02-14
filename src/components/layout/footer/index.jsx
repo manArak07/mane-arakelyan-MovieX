@@ -1,34 +1,13 @@
-import { Link } from "react-router-dom"
+// social media component
+import SocialMedia from "../../common/social-media"
 
 function Footer() {
     return (
-        <footer className="w-full mt-5 flex items-center border-t-[1px]">
-            <div className="w-full h-8 flex justify-around">
-                <div className="w-[20%] flex justify-center">
-                    <p>©2005-2024 List.am</p>
-                </div>
-                <div className="w-[40%] ">
-                    <ul className="flex justify-evenly text-center items-center">
-                        <li>
-                            <Link className="w-auto ml-2" to="#">
-                                Help
-                            </Link>
-                        </li>
-                        <li>
-                            <Link className="w-auto ml-2" to="#">
-                                Contact us
-                            </Link>
-                        </li>
-                        <li>
-                            <Link className="w-auto ml-2" to="#">
-                                Terms of service
-                            </Link>
-                        </li>
-                    </ul>
-
-
-
-                </div>
+        <footer className="bg-yellow w-full h-24 flex mt-16 items-center justify-between font-geologica sm:flex-col sm:items-center">
+            <SocialMedia />
+            {/* footer logo */}
+            <div className="mr-5 sm:mr-0">
+                <h1 className="text-white text-[38px] sm:h-auto sm:text-[24px]">Movie <span className="text-grey text-[40px] sm:text-[28px]">X</span></h1>
             </div>
         </footer>
     )
